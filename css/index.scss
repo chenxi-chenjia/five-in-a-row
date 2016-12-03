@@ -1,0 +1,376 @@
+ul,li{
+	list-style:none;
+}
+@mixin incenter{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+body{
+	background: #000;
+	height:100%;
+}
+#welcome{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image:url(../img/jrtp.jpg);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	overflow: hidden;
+	h1{
+		padding-top: 50px;
+		font-family: "微软雅黑";
+		color:#fff;
+		text-shadow:2px 2px 5px #eee;
+	}
+	.options{
+		margin-top: 50px;
+		li{
+			width: 130px;
+			font-size: 18px;
+			color: #fff;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			background: #7d7d7d;
+			display: block;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			cursor:pointer;
+			position: relative;
+			box-shadow: 5px 5px 10px #6a6a6a;
+			transition:width .25s ease-in-out,color .25s ease-in-out,transform 1s ease-in-out;
+			&:after{
+				content:"";
+				display: block;
+				position: absolute;
+				border-left:25px solid #7d7d7d;
+				border-top:25px solid transparent;
+				border-bottom:25px solid transparent;
+				position: absolute;
+				top: 0;
+				left: 100%;
+			}
+		}
+		li+li{
+			margin-top: 15px;
+		}
+		li:hover{
+			width: 200px;
+			color: #9e0000;
+		}
+		.click{
+			transform:translateX(2000px);
+		}
+	}
+}
+#gameInterface{
+	width: 100%;
+	height: 100%;
+	min-width: 1000px;
+	background-image:url(../img/gamebg.jpg);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	position: absolute;
+	box-sizing:border-box;
+	padding-top:20px;
+	top: 0;
+	left: 0;
+	display: none;
+	.row{
+		position: relative;
+	}
+	.begin{
+		width: 150px;
+		height: 80px;
+		cursor: pointer;
+		margin: 0 auto;
+		font-family: "微软雅黑";
+		font-size: 24px;
+		text-align: center;
+		color:#fff;
+		font-weight: 700;
+		line-height: 80px;
+		border-radius: 50%;
+		box-shadow: 0 0 20px #eee;
+		transition: all .5s ease-in-out;
+		&:hover{
+			background:#fff;
+			color:#252525;
+		}
+	}
+	.back{
+		width: 150px;
+		height: 80px;
+		cursor: pointer;
+		position: absolute;
+		top:0;
+		left: 50%;
+		margin-left: -400px;
+		font-family: "微软雅黑";
+		font-size: 24px;
+		text-align: center;
+		color:#eee;
+		font-weight: 700;
+		line-height: 80px;
+		border-radius: 50%;
+		box-shadow: 0 0 20px #999;
+		transition: all .5s ease-in-out;
+		&:hover{
+			background:#ccc;
+			color:#999;
+		}
+	}
+	.save{
+		width: 150px;
+		height: 80px;
+		cursor: pointer;
+		position: absolute;
+		top:0;
+		right: 50%;
+		margin-right: -400px;
+		font-family: "微软雅黑";
+		font-size: 24px;
+		text-align: center;
+		color:#eee;
+		font-weight: 700;
+		line-height: 80px;
+		border-radius: 50%;
+		box-shadow: 0 0 20px #999;
+		transition: all .5s ease-in-out;
+		&:hover{
+			background:#ccc;
+			color:#999;
+		}	
+	}
+	.saveimg{
+		width:600px;
+		height:600px;
+		@include incenter;
+		background:#fff;
+		transition:transform 1s ease-in-out;
+		&>div{
+			position:relative;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+		}
+		.close{
+			width:20px;
+			height:20px;
+			position:absolute;
+			right:0;
+			top:0;
+			border-radius:50%;
+			background:#000;
+			opacity: .6;
+			z-index:10;
+			transition:all .25s ease-in-out;
+			&:after{
+				background:#fff;
+				position:absolute;
+				display:block;
+				content:"";
+				@include incenter;
+				transform:rotate(45deg);
+				width:10%;
+				height:80%;
+			}
+			&:before{
+				background:#fff;
+				position:absolute;
+				display:block;
+				content:"";
+				@include incenter;
+				transform:rotate(-45deg);
+				width:10%;
+				height:80%;
+			}
+			&:hover{
+				transform:rotate(180deg);
+				opacity: .9;
+			}
+		}
+	}
+	.saveimgclick{
+		transform:scale(0,0);
+	}
+	.row{
+		min-width: 1000px;
+	}
+	.game{
+		width: 1000px;
+		height: 600px;
+		margin: 30px auto;
+		padding:0;
+	}
+	.qpbj{
+		width: 600px;
+		height: 600px;
+		display: block;
+		position: absolute;
+		@include incenter;
+		background: url(../img/timg.jpg) center no-repeat;
+		background-size: 100% 100%;
+	}
+	canvas{
+		display: block;
+		position: absolute;
+		@include incenter;
+	}
+	.cl{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		&>div{
+			position: relative;
+			margin-top: 20px;
+			background: #000;
+			box-shadow: 5px 5px 10px #333;
+			color:#fff;
+			line-height: 30px;
+			font-size: 16px;
+			font-family: "Arial";
+			text-align: center;
+			border-radius: 10px;
+			h4{
+				font-family: "微软雅黑";
+				line-height: 35px;
+				text-shadow:2px 2px 5px #eee;
+			}
+		}
+	}
+	.cr{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		bottom: 50px;
+		right: 50px;
+		&>div{
+			position: relative;
+			border-radius: 10px;
+			margin-top: 20px;
+			background: #fff;
+			box-shadow: 5px 5px 10px #eee;
+			color:#000;
+			line-height: 30px;
+			font-size: 16px;
+			font-family: "Arial";
+			text-align: center;
+			h4{
+				font-family: "微软雅黑";
+				line-height: 35px;
+				text-shadow:2px 2px 5px #ddd;
+			}
+		}
+	}
+	.black{
+		width: 300px;
+		height: 200px;
+		@include incenter;
+		display:none;
+		opacity: 0;
+		border-radius:10px;
+		background: #000;
+		color:#fff;
+		text-align:center;
+		line-height:100px;
+		font-size:18px;
+		font-family:"微软雅黑";
+		transition:all 0.5 ease-in-out;
+	}
+	.white{
+		width: 300px;
+		height: 200px;
+		@include incenter;
+		display:none;
+		opacity: 0;
+		border-radius:10px;
+		background: #fff;
+		line-height:100px;
+		font-size:18px;
+		font-family:"微软雅黑";
+		color:#000;
+		text-align:center;
+		transition:all 0.5 ease-in-out;
+	}
+	.win{
+		display:block;
+		opacity: 1;
+		z-index:20;
+	}
+	@keyframes star {
+		0{
+			opacity: 1;
+		}
+		49%{
+			opacity: 1;
+		}
+		50%{
+			opacity: 0;
+		}
+		99%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	.bnb{
+		animation:star linear 1s infinite;
+	}
+}
+#ljym{
+	width: 100%;
+	height: 100%;
+	background: url(../img/ljdz.jpg) center no-repeat;
+	background-size: auto 100%;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	.row{
+		position:relative;
+	}
+	h1{
+		padding-top: 50px;
+		font-family: "微软雅黑";
+		color:#fff;
+		text-shadow:2px 2px 5px #eee;
+	}
+	.pp{
+		font:18px/30px "Arial";
+		color:#fff;
+		text-shadow:2px 2px 5px #eee;
+		position:absolute;
+		bottom:0;
+		right:0;
+		cursor:pointer;
+		transition:all .5s ease-in-out;
+		&:hover{
+			color:#d8d8d8;
+		}
+	}
+	.back{
+		font:18px/30px "Arial";
+		color:#fff;
+		text-shadow:2px 2px 5px #eee;
+		position:absolute;
+		bottom:0;
+		left:100px;
+		cursor:pointer;
+		transition:all .5s ease-in-out;
+		&:hover{
+			color:#d8d8d8;
+		}
+	}
+}

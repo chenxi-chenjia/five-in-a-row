@@ -6,11 +6,82 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script src="js/jquery.js"></script>	
 	<script src="js/index.js"></script>
+	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <div id="welcome">
-	
+	<audio src="music/bj.mp3" id="bjmusic" autoplay loop></audio>
+	<div class="container">
+		<div class="row">
+			<h1 class="col-xs-6 col-md-offset-3">五子棋之三国绝杀</h1>
+		</div>
+		<div class="row">
+			<ul class="col-xs-6 col-md-offset-2 options">
+			<audio src="music/Yasuo.mp3" id="yasuo"></audio>
+				<li class="game ai">人机对战</li>
+				<li class="game pp">联机对战</li>
+				<li>刷新适配</li>
+				<li>退出游戏</li>
+			</ul>
+		</div>
+	</div>
 </div>
-	
+<div id="gameInterface">
+	<audio src="music/ls.mp3" id="lsmusic"></audio>	
+	<div class="container">
+		<div class="row">
+			<audio src="music/Garen.mp3" id="rztz"></audio>
+			<audio src="music/19.mp3" id="dmxy"></audio>
+			<div class="begin">全军出击</div>
+			<div class="back">鸣金收兵</div>
+			<div class="save">指点江山</div>
+		</div>
+		<div class="row">
+			<div class="game col-xs-12">
+				<div class="cl">
+					<div>
+						<h4>黑方</h4>
+						<span class="m">00</span>
+						<b>:</b>
+						<span class="s">00</span>
+					</div>
+				</div>
+				<div class="black"></div>
+				<div class="qpbj"></div>
+				<canvas width="600" height="600"></canvas>
+				<div class="cr">
+					<div>
+						<h4>白方</h4>
+						<span class="m">00</span>
+						<b>:</b>
+						<span class="s">00</span>
+					</div>
+				</div>
+				<div class="white"></div>
+			</div>
+		</div>
+		<div class="saveimg saveimgclick">
+			<div>
+				<div class="close"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="ljym">
+	<div class="container">
+		<div class="row">
+			<h1 class="col-xs-6 col-md-offset-3">冲锋陷阵，誓死无悔</h1>
+			<div class="pp">
+				速战速决
+			</div>
+			<div class="back">惨败归营</div>
+		</div>
+		<div class="row">
+			
+		</div>
+	</div>
+</div>	
 </body>
+
 </html>
